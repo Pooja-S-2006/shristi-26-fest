@@ -14,6 +14,7 @@ import {
   Trophy,
 } from "lucide-react";
 import soloSingingImage from "@/assets/solo-singing.png";
+import groupSingingImage from "@/assets/group-singing.png";
 
 const events = [
   {
@@ -25,7 +26,7 @@ const events = [
   {
     name: "Group Singing",
     icon: Users,
-    image: "https://images.unsplash.com/photo-1529518969858-8baa65152fc8?w=400&h=300&fit=crop",
+    image: groupSingingImage,
     category: "Group",
   },
   {
