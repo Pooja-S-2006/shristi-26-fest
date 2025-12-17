@@ -13,12 +13,13 @@ import {
   Users,
   Trophy,
 } from "lucide-react";
+import soloSingingImage from "@/assets/solo-singing.png";
 
 const events = [
   {
     name: "Solo Singing",
     icon: Mic,
-    image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=400&h=300&fit=crop",
+    image: soloSingingImage,
     category: "Solo",
   },
   {
