@@ -22,6 +22,7 @@ const events = [
     icon: Mic,
     image: soloSingingImage,
     category: "Solo",
+    imageClassName: "object-top",
   },
   {
     name: "Group Singing",
