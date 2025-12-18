@@ -38,16 +38,16 @@ export const EventCard = ({
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-            <Icon className="w-5 h-5 text-primary" />
+      <div className="p-4 sm:p-6">
+        <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+            <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
           </div>
-          <h3 className="font-serif text-xl font-semibold text-foreground">{name}</h3>
+          <h3 className="font-serif text-lg sm:text-xl font-semibold text-foreground line-clamp-1">{name}</h3>
         </div>
 
         <Button
-          className="w-full bg-primary/10 hover:bg-primary text-primary hover:text-primary-foreground border border-primary/20 hover:border-primary transition-all duration-300"
+          className="w-full bg-primary/10 hover:bg-primary text-primary hover:text-primary-foreground border border-primary/20 hover:border-primary transition-all duration-300 text-sm sm:text-base"
           variant="outline"
         >
           Register

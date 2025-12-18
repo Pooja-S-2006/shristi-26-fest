@@ -95,14 +95,14 @@ export const PhotoGallery = () => {
         </div>
 
         {/* Thumbnail Strip */}
-        <div className="flex justify-center gap-4 mt-8 overflow-x-auto pb-4">
+        <div className="flex justify-start sm:justify-center gap-2 sm:gap-4 mt-6 sm:mt-8 overflow-x-auto pb-4 px-4 -mx-4 sm:mx-0 sm:px-0">
           {galleryImages.map((image, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`flex-shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+              className={`flex-shrink-0 w-16 h-12 sm:w-20 sm:h-14 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
                 index === currentIndex
-                  ? "border-primary scale-110"
+                  ? "border-primary scale-105 sm:scale-110"
                   : "border-transparent opacity-60 hover:opacity-100"
               }`}
             >

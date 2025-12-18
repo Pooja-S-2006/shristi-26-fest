@@ -49,10 +49,10 @@ export const HeroSection = () => {
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/30 to-accent/20" />
       
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary/10 blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-48 h-48 rounded-full bg-lavender/20 blur-3xl animate-float" style={{ animationDelay: "1s" }} />
-      <div className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-peach/30 blur-2xl animate-float" style={{ animationDelay: "2s" }} />
+      {/* Decorative elements - hidden on very small screens to prevent overflow */}
+      <div className="hidden sm:block absolute top-20 left-10 w-32 h-32 rounded-full bg-primary/10 blur-3xl animate-float" />
+      <div className="hidden sm:block absolute bottom-20 right-10 w-48 h-48 rounded-full bg-lavender/20 blur-3xl animate-float" style={{ animationDelay: "1s" }} />
+      <div className="hidden md:block absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-peach/30 blur-2xl animate-float" style={{ animationDelay: "2s" }} />
 
       <div className="relative z-10 container mx-auto px-4 text-center">
         {/* Date Badge */}
@@ -62,7 +62,7 @@ export const HeroSection = () => {
         </div>
 
         {/* Main Title */}
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
           <span className="text-gradient">Shristi'26</span>
         </h1>
 
@@ -75,21 +75,21 @@ export const HeroSection = () => {
         </p>
 
         {/* Countdown Timer */}
-        <div className="flex justify-center gap-4 md:gap-8 mb-12 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+        <div className="flex justify-center flex-wrap gap-2 sm:gap-4 md:gap-8 mb-8 sm:mb-12 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
           {[
             { value: timeLeft.days, label: "Days" },
             { value: timeLeft.hours, label: "Hours" },
-            { value: timeLeft.minutes, label: "Minutes" },
-            { value: timeLeft.seconds, label: "Seconds" },
+            { value: timeLeft.minutes, label: "Min" },
+            { value: timeLeft.seconds, label: "Sec" },
           ].map((item) => (
             <div
               key={item.label}
-              className="flex flex-col items-center p-4 md:p-6 rounded-2xl bg-card/60 backdrop-blur-sm border border-primary/10 min-w-[70px] md:min-w-[100px]"
+              className="flex flex-col items-center p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl bg-card/60 backdrop-blur-sm border border-primary/10 min-w-[60px] sm:min-w-[70px] md:min-w-[100px]"
             >
-              <span className="font-serif text-3xl md:text-5xl font-bold text-primary">
+              <span className="font-serif text-2xl sm:text-3xl md:text-5xl font-bold text-primary">
                 {item.value.toString().padStart(2, "0")}
               </span>
-              <span className="text-xs md:text-sm text-muted-foreground mt-1">
+              <span className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-1">
                 {item.label}
               </span>
             </div>
