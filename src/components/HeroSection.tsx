@@ -50,6 +50,7 @@ export const HeroSection = () => {
       <div className="absolute inset-0 w-full bg-gradient-to-br from-primary/20 via-secondary/30 to-accent/20" />
       
       {/* Decorative elements */}
+      {/* Decorative floating elements */}
       <div className="absolute top-20 left-4 sm:left-10 w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary/10 blur-3xl animate-float" />
       <div className="absolute bottom-20 right-4 sm:right-10 w-32 h-32 sm:w-48 sm:h-48 rounded-full bg-lavender/20 blur-3xl animate-float" style={{ animationDelay: "1s" }} />
       <div className="hidden sm:block absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-peach/30 blur-2xl animate-float" style={{ animationDelay: "2s" }} />
