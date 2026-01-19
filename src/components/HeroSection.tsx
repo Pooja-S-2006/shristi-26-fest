@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, Sparkles } from "lucide-react";
+import shristiBgImage from "@/assets/SHRISTI-26-1.png";
 
 const targetDate = new Date("2026-03-07T00:00:00");
 
@@ -46,8 +47,12 @@ export const HeroSection = () => {
       id="home"
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden"
     >
-      {/* Background with gradient overlay */}
-      <div className="absolute inset-0 w-full bg-gradient-to-br from-primary/20 via-secondary/30 to-accent/20" />
+      {/* Background with image */}
+      <div 
+        className="absolute inset-0 w-full bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${shristiBgImage})` }}
+      />
+      <div className="absolute inset-0 w-full bg-gradient-to-br from-black/60 via-black/70 to-black/60" />
       
       {/* Decorative elements */}
       {/* Decorative floating elements */}
@@ -58,22 +63,22 @@ export const HeroSection = () => {
       <div className="relative z-10 w-full max-w-full px-4 py-16 sm:py-24 lg:py-32 text-center">
         {/* Date */}
         <div className="mb-4 sm:mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm border border-primary/20">
-            <Calendar className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-foreground">March 7, 2026</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-500/20 backdrop-blur-sm border border-pink-300/30">
+            <Calendar className="w-4 h-4 text-pink-300" />
+            <span className="text-sm font-medium text-pink-200">March 7, 2026</span>
           </div>
         </div>
 
         {/* Main Title */}
         <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-3 sm:mb-6">
-          <span className="text-gradient">Shristi'26</span>
+          <span className="text-pink-300">Shristi'26</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-2 sm:mb-3">
+        <p className="text-lg sm:text-xl md:text-2xl text-pink-200 mb-2 sm:mb-3">
           Celebrating the Spirit of Womanhood
         </p>
-        <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg text-pink-200/80 mb-8 sm:mb-12 max-w-3xl mx-auto">
           A Women's Day Cultural Extravaganza by Women Development Cell
         </p>
 
@@ -87,12 +92,12 @@ export const HeroSection = () => {
           ].map((item) => (
             <div
               key={item.label}
-              className="flex flex-col items-center p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl bg-card/60 backdrop-blur-sm border border-primary/10"
+              className="flex flex-col items-center p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl bg-pink-500/10 backdrop-blur-sm border border-pink-300/20"
             >
-              <span className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
+              <span className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-pink-300">
                 {item.value.toString().padStart(2, "0")}
               </span>
-              <span className="text-xs sm:text-sm text-muted-foreground mt-1">
+              <span className="text-xs sm:text-sm text-pink-200/70 mt-1">
                 {item.label}
               </span>
             </div>
@@ -103,7 +108,7 @@ export const HeroSection = () => {
         <Button
           onClick={scrollToEvents}
           size="lg"
-          className="group px-8 py-6 text-lg bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up"
+          className="group px-8 py-6 text-lg bg-pink-500 hover:bg-pink-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up"
           style={{ animationDelay: "0.5s" }}
         >
           <Sparkles className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />

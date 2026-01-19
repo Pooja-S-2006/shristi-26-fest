@@ -9,6 +9,7 @@ import img3 from "../assets/img3.JPG";
 import img6 from "../assets/img6.JPG";
 import img5 from "../assets/img5.JPG";
 import img7 from "../assets/img7.JPG";
+import posterImg from "../assets/poster img.png";
 
 // Gallery images with direct imports
 const galleryImages = [
@@ -50,13 +51,20 @@ export const PhotoGallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section 
+      id="gallery" 
+      className="py-24 relative bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${posterImg})` }}
+    >
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/60"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-foreground">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-white">
             Photo <span className="text-gradient">Gallery</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 max-w-2xl mx-auto">
             Glimpses of past celebrations and memorable moments
           </p>
         </div>

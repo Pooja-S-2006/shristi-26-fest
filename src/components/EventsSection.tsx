@@ -12,6 +12,7 @@ import {
   Sparkles,
   Users,
   Trophy,
+  ForkKnife,
 } from "lucide-react";
 import soloSingingImage from "@/assets/solo-singing.png";
 import groupSingingImage from "@/assets/group-singing.png";
@@ -27,6 +28,11 @@ import instrumentalImage from "@/assets/instrumental-img.png";
 import uniquetalentImage from "@/assets/unique-talent2.png";
 import photographyImage from "@/assets/photography-img.png";
 import carvingImage from "@/assets/carving-img.png";
+import posterImg from "@/assets/poster img.png";
+import instrumentaluniqueImage from "@/assets/music-unique.png";
+import fashionparadeImage from "@/assets/fashion-parade.png";
+import carvingcookingImage from "@/assets/carving-cooking.png";
+import debateImage from "@/assets/debate-img.png";
 
 const events = [
   {
@@ -34,7 +40,7 @@ const events = [
     icon: Mic,
     image: soloSingingImage,
     category: "Solo",
-    imageClassName: "object-top",
+    imageClassName: "object-center scale-99",
   },
   {
     name: "Group Singing",
@@ -47,77 +53,70 @@ const events = [
     icon: Sparkles,
     image: soloDanceImage,
     category: "Solo",
-    imageClassName: "object-top",
+    imageClassName: "object-center scale-100",
   },
   {
     name: "Dual Dance",
     icon: Music,
     image: dualDanceImage,
     category: "Duo",
-    imageClassName: "object-top"
+    imageClassName: "object-center scale-100"
   },
   {
     name: "Group Dance",
     icon: Users,
     image: groupDanceImage,
     category: "Team",
-    imageClassName: "object-top",
+    imageClassName: "object-center scale-110",
   },
   {
-    name: "Instrumental",
+    name: "Instrumental &<br/>Unique Talent",
     icon: Guitar,
-    image: instrumentalImage,
+    image: instrumentaluniqueImage,
     category: "Solo",
     imageClassName: "object-cover scale-100"
   },
   {
-    name: "Unique Talent",
-    icon: Trophy,
-    image: uniquetalentImage,
+    name: "Fashion Parade",
+    icon: Sparkles,
+    image: fashionparadeImage,
     category: "Solo",
-    imageClassName: "object-top w-full h-full scale-300"
+    imageClassName: "object-center w-full h-full scale-300"
   },
   {
     name: "Rangoli",
     icon: Palette,
     image: rangoliImage,
     category: "Team",
-    imageClassName: "object-cover w-full h-full scale-99",
+    imageClassName: "object-cover w-full h-full scale-300",
   },
   {
     name: "Mehandi",
     icon: Hand,
     image: mehandiImage,
     category: "Solo or Duo",
-    imageClassName: "object-cover w-full h-full scale-99"
+    imageClassName: "object-bottom w-full h-full scale-100"
   },
   {
     name: "Photography",
     icon: Camera,
     image: photographyImage,
     category: "Solo",
-    imageClassName:"object-top w-full h-full scale-110"
+    imageClassName:"object-center w-full h-full scale-100"
   },
   {
-    name: "Carving",
-    icon: Scissors,
-    image: carvingImage,
-    category: "Solo",
-    imageClassName:"object-cover w-full h-full scale-300"
-  },
-  {
-    name: "Cook Without Fire",
-    icon: Utensils,
-    image: cookwithoutfireImage,
+    name: "Carving &<br/>Cook without Fire",
+    icon: ForkKnife,
+    image: carvingcookingImage,
     category: "Team",
-    imageClassName: "object-top scale-100"
+    imageClassName:"object-center w-full h-full scale-300"
   },
   {
     name: "Treasure Hunt",
     icon: Compass,
     image: treasurehuntImage,
     category: "Team",
-    imageClassName: "object-top scale-100"
+    imageClassName: "object-center scale-100"
   },
   {
     name: "Craft Work",
@@ -126,17 +125,32 @@ const events = [
     category: "Team",
     imageClassName: "object-cover scale-99"
   },
+  {
+    name: "Debate",
+    icon: Mic,
+    image: debateImage,
+    category: "Solo",
+    imageClassName: "object-cover scale-99"
+  },
 ];
 
 export const EventsSection = () => {
   return (
-    <section id="events" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section 
+      id="events" 
+      className="py-24 relative bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${posterImg})` }}
+    >
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/60"></div>
+      
+      {/* Content */}
+      <div className="relative container mx-auto px-4 z-10">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-foreground">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-white">
             Our <span className="text-gradient">Events</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 max-w-2xl mx-auto">
             Explore our diverse range of competitions and showcase your talents. 
             From performing arts to creative crafts, there's something for everyone.
           </p>

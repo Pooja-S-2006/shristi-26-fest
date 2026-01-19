@@ -1,4 +1,5 @@
 import { Heart, Star, Users, Sparkles } from "lucide-react";
+import posterImg from "@/assets/poster img.png";
 
 const features = [
   {
@@ -25,13 +26,20 @@ const features = [
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section 
+      id="about" 
+      className="py-24 relative bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${posterImg})` }}
+    >
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/60"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-foreground">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-white">
             About <span className="text-gradient">Shristi'26</span>
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg text-white/95 leading-relaxed">
             Shristi'26 is a vibrant celebration of International Women's Day, organized by the 
             Women Development Cell. This cultural extravaganza brings together talented women 
             to showcase their creativity, express their artistry, and celebrate the spirit of 
@@ -43,16 +51,16 @@ export const AboutSection = () => {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="group p-6 rounded-2xl bg-black/30 backdrop-blur-sm border border-white/10 hover:bg-black/40 hover:border-white/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <feature.icon className="w-7 h-7 text-primary" />
+              <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mb-4 group-hover:bg-white/30 transition-colors">
+                <feature.icon className="w-7 h-7 text-white" />
               </div>
-              <h3 className="font-serif text-xl font-semibold mb-2 text-foreground">
+              <h3 className="font-serif text-xl font-semibold mb-2 text-white">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <p className="text-white/90">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -60,9 +68,9 @@ export const AboutSection = () => {
         {/* Decorative floral accent */}
         <div className="mt-16 flex justify-center">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary/50" />
-            <Sparkles className="w-5 h-5 text-primary animate-pulse-soft" />
-            <div className="w-16 h-px bg-gradient-to-l from-transparent to-primary/50" />
+            <div className="w-16 h-px bg-gradient-to-r from-transparent to-white/40" />
+            <Sparkles className="w-5 h-5 text-white/80 animate-pulse-soft" />
+            <div className="w-16 h-px bg-gradient-to-l from-transparent to-white/40" />
           </div>
         </div>
       </div>

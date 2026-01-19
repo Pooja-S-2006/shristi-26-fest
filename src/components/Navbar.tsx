@@ -42,7 +42,7 @@ export const Navbar = () => {
             e.preventDefault();
             scrollToSection("#home");
           }}
-          className="font-serif text-2xl font-bold text-primary hover:opacity-80 transition-opacity"
+          className="font-serif text-2xl font-bold text-pink-300 hover:opacity-80 transition-opacity"
         >
           Shristi'26
         </a>
@@ -57,14 +57,14 @@ export const Navbar = () => {
                 e.preventDefault();
                 scrollToSection(link.href);
               }}
-              className="text-foreground/80 hover:text-primary transition-colors font-medium"
+              className="text-pink-300 hover:text-pink-500 transition-colors font-medium"
             >
               {link.name}
             </a>
           ))}
           <Button
             onClick={() => scrollToSection("#events")}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground"
+            className="bg-pink-500 hover:bg-pink-600 text-white"
           >
             Register Now
           </Button>
@@ -72,7 +72,7 @@ export const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden p-2 text-pink-300"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -95,7 +95,7 @@ export const Navbar = () => {
                 e.preventDefault();
                 scrollToSection(link.href);
               }}
-              className="text-2xl font-medium text-foreground hover:text-primary transition-colors"
+              className="text-2xl font-medium text-pink-300 hover:text-pink-500 transition-colors"
             >
               {link.name}
             </a>
@@ -103,7 +103,7 @@ export const Navbar = () => {
           <Button
             onClick={() => scrollToSection("#events")}
             size="lg"
-            className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground"
+            className="mt-4 bg-pink-500 hover:bg-pink-600 text-white"
           >
             Register Now
           </Button>
