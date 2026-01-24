@@ -122,7 +122,7 @@ const events = [
     name: "Craft Work",
     icon: Scissors,
     image: craftworkImage,
-    category: "Team",
+    category: "Duo",
     imageClassName: "object-cover scale-99"
   },
   {
