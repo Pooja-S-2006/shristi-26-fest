@@ -80,7 +80,7 @@ const events = [
     name: "Fashion Parade",
     icon: Sparkles,
     image: fashionparadeImage,
-    category: "Solo",
+    category: "Solo or Team",
     imageClassName: "object-center w-full h-full scale-300"
   },
   {
