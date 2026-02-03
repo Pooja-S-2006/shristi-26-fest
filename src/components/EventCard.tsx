@@ -17,10 +17,20 @@ export const EventCard = ({
   category,
   imageClassName,
 }: EventCardProps) => {
+  // Check if this is a singing event to apply red theme and close registration
+  const isSingingEvent = name === "Solo Singing" || name === "Group Singing";
+
   return (
-    <div className="group relative overflow-hidden rounded-2xl bg-pink-100 border border-pink-200 hover:border-pink-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+    <div
+      className={cn(
+        "group relative overflow-hidden rounded-2xl border transition-all duration-300 hover:-translate-y-2 hover:shadow-xl",
+        isSingingEvent 
+          ? "bg-red-100 border-red-200 hover:border-red-400" 
+          : "bg-pink-100 border-pink-200 hover:border-pink-400"
+      )}
+    >
       {/* Image */}
-      <div className="relative h-48 overflow-hidden bg-pink-50">
+      <div className={cn("relative h-48 overflow-hidden", isSingingEvent ? "bg-red-50" : "bg-pink-50")}>
         <img
           src={image}
           alt={name}
@@ -29,10 +39,16 @@ export const EventCard = ({
             imageClassName
           )}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-pink-100 via-transparent to-transparent" />
+        <div className={cn(
+          "absolute inset-0 bg-gradient-to-t via-transparent to-transparent",
+          isSingingEvent ? "from-red-100" : "from-pink-100"
+        )} />
 
         {/* Category Badge */}
-        <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-pink-500 text-white text-xs font-medium">
+        <div className={cn(
+          "absolute top-4 right-4 px-3 py-1 rounded-full text-white text-xs font-medium",
+          isSingingEvent ? "bg-red-500" : "bg-pink-500"
+        )}>
           {category}
         </div>
       </div>
@@ -40,15 +56,30 @@ export const EventCard = ({
       {/* Content */}
       <div className="p-6">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-lg bg-pink-200 flex items-center justify-center">
-            <Icon className="w-5 h-5 text-pink-700" />
+          <div className={cn(
+            "w-10 h-10 rounded-lg flex items-center justify-center",
+            isSingingEvent ? "bg-red-200" : "bg-pink-200"
+          )}>
+            <Icon className={cn("w-5 h-5", isSingingEvent ? "text-red-700" : "text-pink-700")} />
           </div>
-          <h3 className="font-serif text-xl font-semibold text-pink-900" dangerouslySetInnerHTML={{ __html: name }} />
+          <h3 
+            className={cn(
+              "font-serif text-xl font-semibold", 
+              isSingingEvent ? "text-red-900" : "text-pink-900"
+            )} 
+            dangerouslySetInnerHTML={{ __html: name }} 
+          />
         </div>
 
         <Button
-          className="w-full bg-pink-200 hover:bg-pink-300 text-pink-700 hover:text-pink-900 border border-pink-300 hover:border-pink-400 transition-all duration-300"
+          className={cn(
+            "w-full transition-all duration-300",
+            isSingingEvent 
+              ? "bg-red-200 hover:bg-red-200 text-red-700 cursor-not-allowed border-red-300" 
+              : "bg-pink-200 hover:bg-pink-300 text-pink-700 hover:text-pink-900 border-pink-300 hover:border-pink-400"
+          )}
           variant="outline"
+          disabled={isSingingEvent}
           onClick={() => {
             if (name === "Dual Dance") {
               window.open("https://forms.gle/JHxp49Ee1SAKXN1J8", "_blank");
@@ -56,16 +87,12 @@ export const EventCard = ({
               window.open("https://forms.gle/L6kMHWa4qXtV4njS9", "_blank");
             } else if (name === "Mehandi") {
               window.open("https://forms.gle/AiigzPBB2YZRPDpk8", "_blank");
-            } else if (name === "Group Singing") {
-              window.open("https://forms.gle/YiWY7NuzDMU6Liyo7", "_blank");
             } else if (name === "Rangoli") {
               window.open("https://forms.gle/TmL3Tcg6s3B78A1G9", "_blank");
             } else if (name === "Photography") {
               window.open("https://forms.gle/yNHdqXoXRTKxUVLt8", "_blank");
             } else if (name === "Treasure Hunt") {
               window.open("https://forms.gle/nQpuo5UNURNCxxjRA", "_blank");
-            } else if (name === "Solo Singing") {
-              window.open("https://forms.gle/dZiDcibLdoC8uGK18", "_blank");
             } else if (name === "Solo Dance") {
               window.open("https://forms.gle/NyzDVq5qHeyMG4Ky6", "_blank");
             } else if (name === "Instrumental &<br/>Unique Talent") {
@@ -81,10 +108,9 @@ export const EventCard = ({
             }
           }}
         >
-          Register
+          {isSingingEvent ? "Closed" : "Register"}
         </Button>
       </div>
     </div>
   );
 };
-
